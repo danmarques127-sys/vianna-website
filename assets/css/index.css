@@ -9740,9 +9740,27 @@ html {
 
 
 
-/* Stable hero affiliation rail: equal visual cells */
-.hero>.viana-hero-credentials{position:absolute;z-index:40;top:50%;right:clamp(25px,5vw,75px);transform:translateY(-50%);width:150px;display:grid;grid-template-columns:1fr;place-items:center;gap:11px;pointer-events:none}
-.hero>.viana-hero-credentials>img{display:block;position:static;width:126px;height:66px;max-width:126px;max-height:66px;min-width:0;min-height:0;object-fit:contain;object-position:center;filter:drop-shadow(0 3px 7px rgba(0,0,0,.18))}
-.hero .hero-edge-gradient{opacity:.78}.hero .hero-reading-gradient{opacity:.78}.hero .hero-vertical-gradient{opacity:.78}
-@media(max-width:1050px){.hero>.viana-hero-credentials{right:14px;width:110px;gap:7px}.hero>.viana-hero-credentials>img{width:99px;height:53px;max-width:99px;max-height:53px}}
-@media(max-width:700px){.hero>.viana-hero-credentials{right:9px;top:auto;bottom:90px;transform:none;width:78px;gap:3px}.hero>.viana-hero-credentials>img{width:72px;height:40px;max-width:72px;max-height:40px}}
+/* Hero badges — centered in the right-side photo space, away from the page edge. */
+.hero>.viana-hero-credentials{
+ position:absolute;z-index:40;top:53%;right:clamp(115px,16vw,260px);
+ transform:translateY(-50%);width:160px;display:grid;
+ grid-template-columns:1fr;justify-items:center;align-items:center;
+ gap:13px;margin:0;padding:0;pointer-events:none;
+}
+.hero>.viana-hero-credentials>img{
+ display:block;position:static;width:148px;height:76px;
+ max-width:148px;max-height:76px;min-width:0;min-height:0;
+ object-fit:contain;object-position:center;
+ filter:drop-shadow(0 3px 7px rgba(0,0,0,.22));
+}
+.hero .hero-edge-gradient{opacity:.78}
+.hero .hero-reading-gradient{opacity:.78}
+.hero .hero-vertical-gradient{opacity:.78}
+@media(max-width:1100px){
+ .hero>.viana-hero-credentials{right:clamp(68px,10vw,125px);width:120px;gap:8px}
+ .hero>.viana-hero-credentials>img{width:112px;height:60px;max-width:112px;max-height:60px}
+}
+@media(max-width:700px){
+ .hero>.viana-hero-credentials{right:9px;top:auto;bottom:90px;transform:none;width:78px;gap:3px}
+ .hero>.viana-hero-credentials>img{width:72px;height:40px;max-width:72px;max-height:40px}
+}
