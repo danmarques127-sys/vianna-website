@@ -401,3 +401,6 @@ a:focus-visible, button:focus-visible {
 .site-header .brand-mark>*{display:none!important}
 .site-header .brand-text{display:none!important}
 @media(max-width:640px){.site-header .brand-mark{width:136px!important;height:55px!important}}
+
+/* Contrast for navy lettering inside the transparent full-color logo. */
+.site-header .brand-mark{background-color:#fff!important;border-radius:5px!important;background-size:calc(100% - 9px) auto!important}
