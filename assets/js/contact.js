@@ -684,7 +684,7 @@ function initializeContactForm() {
             ) {
 
                 setStatus(
-                    "The form layout is ready, but Formspree is not connected yet. Replace YOUR_FORM_ID in contact.html with your Formspree form ID.",
+                    "The contact form is not configured correctly. Please contact us directly.",
                     "error"
                 );
 
