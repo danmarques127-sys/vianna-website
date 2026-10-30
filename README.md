@@ -18,8 +18,7 @@ Official website source for **Viana Commercial Services Inc.**, a family-operate
 - `projects.html`: examples of project/service categories.
 - `contact.html`: contact form and contact information.
 - `request-quote.html`: quote request form.
-- `blog.html`: static blog landing page (currently a coming-soon experience).
-- `blog.php`: dynamic blog landing page using the PHP backend; retains `posts(false)` and links to `backend-blog/post.php`.
+- `blog.php`: **the only blog landing page**, using PHP to load posts into responsive article cards (3 columns on desktop, 2 on tablets, 1 on mobile). Links to `backend-blog/post.php`.
 - `backend-blog/`: PHP blog administration and article functionality; requires PHP-capable hosting and backend setup.
 - `privacy-policy.html`, `terms.html`: legal content; verify business details before production.
 - `404.html`: error page; must be returned with HTTP 404 by host.
@@ -29,7 +28,7 @@ Official website source for **Viana Commercial Services Inc.**, a family-operate
 
 ## Technical stack and hosting
 
-The public HTML pages use static HTML, CSS and JavaScript, with responsive header/mobile navigation and SEO metadata. The repository documentation identifies **Vercel static deployment** as the intended delivery for HTML pages (root directory, Framework Preset: Other, no build command). **Vercel static hosting does not execute the PHP blog backend**; `blog.php`, `backend-blog/` and dynamic publishing require a PHP-capable host or migration to a supported backend. Do not change links to the PHP blog until that environment is working.
+The public HTML pages use static HTML, CSS and JavaScript, with responsive header/mobile navigation and SEO metadata. The repository documentation identifies **Vercel static deployment** as the intended delivery for HTML pages (root directory, Framework Preset: Other, no build command). **Vercel static hosting does not execute the PHP blog backend**; `blog.php`, `backend-blog/` and dynamic publishing require a PHP-capable host or migration to a supported backend. All blog navigation now points to `blog.php`. The legacy `/blog.html` route is configured for a permanent redirect to `/blog.php` (`vercel.json` and Apache `.htaccess`). On a static Vercel deployment the redirect alone does not make PHP executable; the PHP blog requires PHP-capable hosting or a suitable runtime.
 
 ## Forms
 
@@ -51,7 +50,7 @@ Header/menu and footer provide navigation between Home, Services, About, Project
 4. Test header/footer links, internal routes, active states and mobile menu.
 5. Submit both contact and quote forms and confirm delivery in Formspree.
 6. Check `/robots.txt`, `/sitemap.xml`, page canonical tags and structured data from production.
-7. Decide whether the blog remains static or is hosted with PHP before enabling dynamic publishing.
+7. Provision PHP-compatible hosting for the sole `blog.php` page, validate article publishing and confirm the `/blog.html` 301 redirect.
 8. Verify legal pages, 404 status, accessibility and page speed.
 
 **Security:** keep credentials, SMTP credentials, PHP admin secrets and API tokens out of Git; configure them in secure host environment settings.
