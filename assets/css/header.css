@@ -393,3 +393,11 @@ a:focus-visible, button:focus-visible {
     html { scroll-behavior: auto; }
     *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
 }
+
+
+/* Official Viana transparent logo across desktop and mobile navigation. */
+.site-header .brand{display:inline-flex;align-items:center;min-width:0}
+.site-header .brand-mark{display:block!important;position:relative!important;flex:0 0 auto!important;width:180px!important;height:73px!important;background:transparent url('/assets/images/viana-logo.png') center/contain no-repeat!important;border:0!important;box-shadow:none!important;overflow:hidden!important}
+.site-header .brand-mark>*{display:none!important}
+.site-header .brand-text{display:none!important}
+@media(max-width:640px){.site-header .brand-mark{width:136px!important;height:55px!important}}
