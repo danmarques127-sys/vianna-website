@@ -1,28 +1,57 @@
-# Vianna Commercial Services — Website
+# Viana Commercial Services Inc. — Website
 
-Código-fonte do website institucional da Vianna Commercial Services.
+Official website source for **Viana Commercial Services Inc.**, a family-operated cleaning company based in Marlborough, Massachusetts. The public website focuses on **commercial cleaning**, including office, janitorial, post-construction, facility and specialized cleaning.
 
-**Domínio configurado no código:** https://vianaservices.com/
+**Official production domain:** https://vianacommercialservices.com/  
+**Homepage:** https://vianacommercialservices.com/index.html  
+**GitHub repository:** danmarques127-sys/vianna-website  
+**Default branch:** main
 
-## Estrutura
-- `index.html`, `about.html`, `services.html`, `contact.html`: páginas principais.
-- `privacy-policy.html`, `terms.html`, `404.html`: páginas auxiliares.
-- `assets/css/`, `assets/js/`, `assets/photos/`: estilos, scripts e imagens.
-- `services/`, `about/`, `backend-blog/`: páginas/módulos ainda não implementados na cópia recebida.
+> Branding: use **Viana Commercial Services Inc.** as the public-facing company name. Asset filenames may still use `viana-*`, and legacy paths must not be renamed without checking references.
 
-## Desenvolvimento local
-Abra `index.html` no navegador ou use um servidor estático local (`python -m http.server 8000`).
+## Project structure
 
-## Pendências encontradas
-- Configurar a integração real do formulário: ainda existe `YOUR_FORM_ID` no HTML.
-- Verificar as referências a favicons ausentes do ZIP.
-- Implementar ou remover links para páginas de conteúdo vazio conforme a estratégia de publicação.
-- O arquivo `blog.php` e os scripts PHP em `backend-blog/` estão vazios: não há backend funcional incluído.
-- Confirmar hosting/deploy antes de integrar o repositório ao website em produção.
+- `index.html`: home, service highlights and primary quote CTA.
+- `about.html`: company overview, approach, values and links to the family story.
+- `about/our-story.html`: family history supplied by the business; includes a quote request form.
+- `services.html` and `services/`: commercial cleaning offerings and supporting pages.
+- `projects.html`: examples of project/service categories.
+- `contact.html`: contact form and contact information.
+- `request-quote.html`: quote request form.
+- `blog.html`: static blog landing page (currently a coming-soon experience).
+- `blog.php`: dynamic blog landing page using the PHP backend; retains `posts(false)` and links to `backend-blog/post.php`.
+- `backend-blog/`: PHP blog administration and article functionality; requires PHP-capable hosting and backend setup.
+- `privacy-policy.html`, `terms.html`: legal content; verify business details before production.
+- `404.html`: error page; must be returned with HTTP 404 by host.
+- `assets/css/`, `assets/js/`, `assets/images/`, `assets/photos/`: styles, interaction scripts, branding and images.
+- `site.webmanifest`: app metadata.
+- `robots.txt`, `sitemap.xml`: crawling directives and canonical page discovery.
 
-**Importante:** adicionar senhas, tokens ou credenciais somente em armazenamento seguro de segredos, nunca no repositório.
+## Technical stack and hosting
 
-## Vercel deployment
-Site publico estatico servido a partir da raiz do repositorio na branch `main` (Framework Preset: Other, sem Build Command). A area administrativa PHP exige hospedagem PHP independente e nao executa na Vercel estatica.
+The public HTML pages use static HTML, CSS and JavaScript, with responsive header/mobile navigation and SEO metadata. The repository documentation identifies **Vercel static deployment** as the intended delivery for HTML pages (root directory, Framework Preset: Other, no build command). **Vercel static hosting does not execute the PHP blog backend**; `blog.php`, `backend-blog/` and dynamic publishing require a PHP-capable host or migration to a supported backend. Do not change links to the PHP blog until that environment is working.
 
-<!-- Deploy sync check: 2026-10-30. Documentacao atualizada para disparar verificacao da integracao Git. -->
+## Forms
+
+Forms use **Formspree** endpoint `https://formspree.io/f/mgavrvda`. The endpoint is configured in the contact and quote pages, including the family-story quote form. Before going live, verify the Formspree account's email recipient, submit a test entry from each form and check confirmation, spam handling, consent/privacy and error states. Avoid committing secret keys or credentials.
+
+## SEO, indexing and domain
+
+The intended canonical origin is **https://vianacommercialservices.com** (not the prior `vianaservices.com`). Main HTML pages include SEO descriptions and/or canonical URLs and structured data where available; the homepage includes commercial-focused `CleaningService` JSON-LD. `robots.txt` references the root `sitemap.xml`, which lists the principal public HTML pages. Keep links, Open Graph URLs, canonical tags, JSON-LD identifiers and sitemap URLs on the same verified production origin. Confirm www/non-www redirects and HTTPS at the host level. Submit the sitemap to Google Search Console only after deployment.
+
+## Navigation, design and content
+
+Header/menu and footer provide navigation between Home, Services, About, Projects, Blog, Contact and quote request. The footer Company section places **Blog immediately below Contact**. The website emphasizes commercial cleaning; the family story mentions commercial and residential cleaning as provided by the business, without changing the main commercial website positioning. Use the business-provided family narrative as the source of truth.
+
+## Deployment checklist
+
+1. Confirm official name, domain DNS and SSL certificate.
+2. Deploy from `main` and check homepage plus all internal routes.
+3. Check CSS, JS, logo/favicons and images on desktop and mobile.
+4. Test header/footer links, internal routes, active states and mobile menu.
+5. Submit both contact and quote forms and confirm delivery in Formspree.
+6. Check `/robots.txt`, `/sitemap.xml`, page canonical tags and structured data from production.
+7. Decide whether the blog remains static or is hosted with PHP before enabling dynamic publishing.
+8. Verify legal pages, 404 status, accessibility and page speed.
+
+**Security:** keep credentials, SMTP credentials, PHP admin secrets and API tokens out of Git; configure them in secure host environment settings.
