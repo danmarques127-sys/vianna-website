@@ -7,11 +7,11 @@ $all = posts(false);
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Commercial Cleaning Blog | Vianna Commercial Services</title>
-<meta name="description" content="Commercial cleaning insights, janitorial guidance, facility care and company news from Vianna Commercial Services in Marlborough, MA.">
+<title>Commercial Cleaning Blog | Viana Commercial Services</title>
+<meta name="description" content="Commercial cleaning insights, janitorial guidance, facility care and company news from Viana Commercial Services in Marlborough, MA.">
 <link rel="canonical" href="https://vianacommercialservices.com/blog.php">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Commercial Cleaning Blog | Vianna Commercial Services">
+<meta property="og:title" content="Commercial Cleaning Blog | Viana Commercial Services">
 <meta property="og:url" content="https://vianacommercialservices.com/blog.php">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,7 +51,7 @@ $all = posts(false);
 <!-- =================================================
                  5. BRAND
             ================================================== -->
-<a aria-label="Vianna Commercial Services home" class="brand" href="index.html">
+<a aria-label="Viana Commercial Services home" class="brand" href="index.html">
 <img class="viana-official-logo" src="/assets/images/viana-logo-white.png" alt="Viana Commercial Services Inc">
 </a>
 <!-- =================================================
@@ -157,7 +157,7 @@ $all = posts(false);
 <main class="vn-main" id="main-content">
 <section class="vn-hero">
 <nav class="vn-breadcrumb" aria-label="Breadcrumb"><a href="/index.html">Home</a> / Blog</nav>
-<div class="vn-eyebrow">Vianna Commercial Services</div>
+<div class="vn-eyebrow">Viana Commercial Services</div>
 <h1>Insights for cleaner commercial spaces.</h1>
 <p>Practical perspectives on commercial cleaning, janitorial services, and professional facility care.</p>
 <div class="vn-actions"><a class="vn-btn" href="/request-quote.html">Request a Custom Quote →</a><a class="vn-btn secondary" href="/services.html">Explore Services</a></div>
