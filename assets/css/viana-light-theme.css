@@ -1,0 +1,19 @@
+/* Slightly brighter navy theme with hero credential strip */
+:root{--color-navy-950:#071523;--color-navy-900:#0c2033;--color-navy-850:#10283d;--color-navy-800:#142f47;--color-navy-700:#1a3851}
+.hero .hero-edge-gradient{opacity:.68!important}
+.hero .hero-reading-gradient{opacity:.69!important}
+.hero .hero-vertical-gradient{opacity:.66!important}
+.hero .hero-slide::after{opacity:.67!important}
+.hero{background-color:#10273b!important}
+.hero .hero-content{position:relative}
+.viana-hero-badges{display:flex;align-items:center;justify-content:flex-start;flex-wrap:wrap;gap:18px;max-width:100%;margin:0 0 32px;position:relative;z-index:3}
+.viana-hero-badges img{display:block;width:auto;max-width:116px;height:67px;object-fit:contain;filter:drop-shadow(0 5px 10px rgba(0,0,0,.22))}
+.viana-hero-badges img:nth-child(1),.viana-hero-badges img:nth-child(5){max-width:144px}
+.viana-hero-badges img:nth-child(4){max-width:76px}
+.viana-hero-badges img:nth-child(6){max-width:82px}
+.site-header{background:linear-gradient(100deg,#091a2c,#132e46)!important}
+.site-footer,.footer{background-color:#0a1e32!important}
+.industries-section{background:linear-gradient(120deg,#0d2237,#142d43)!important}
+.industries-grid .industry-card{background-color:rgba(255,255,255,.055)}
+@media(max-width:1000px){.viana-hero-badges{gap:12px;margin-bottom:24px}.viana-hero-badges img{height:52px;max-width:95px}.viana-hero-badges img:nth-child(1),.viana-hero-badges img:nth-child(5){max-width:118px}}
+@media(max-width:640px){.viana-hero-badges{gap:9px;justify-content:flex-start;margin-bottom:18px}.viana-hero-badges img{height:39px;max-width:68px}.viana-hero-badges img:nth-child(1),.viana-hero-badges img:nth-child(5){max-width:91px}.viana-hero-badges img:nth-child(4),.viana-hero-badges img:nth-child(6){max-width:55px}}
