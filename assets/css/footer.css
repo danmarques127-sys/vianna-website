@@ -1195,3 +1195,6 @@
 .footer-brand-copy{display:none!important}
 .footer-brand{display:inline-flex!important;align-items:center!important}
 @media(max-width:640px){.footer-brand-mark{width:140px!important;height:117px!important}}
+
+/* Keep navy brand lettering legible on the dark footer. */
+.footer-brand-mark{background-color:#fff!important;border-radius:5px!important;background-size:calc(100% - 12px) auto!important}
