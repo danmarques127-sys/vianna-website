@@ -2,20 +2,22 @@
 
 Código-fonte do website institucional da Vianna Commercial Services.
 
-**Domínio indicado no projeto:** https://vianaservices.com/
+**Domínio configurado no código:** https://vianaservices.com/
 
-## Estrutura esperada
+## Estrutura
 - `index.html`, `about.html`, `services.html`, `contact.html`: páginas principais.
 - `privacy-policy.html`, `terms.html`, `404.html`: páginas auxiliares.
 - `assets/css/`, `assets/js/`, `assets/photos/`: estilos, scripts e imagens.
-- `services/`, `about/`, `backend-blog/`: páginas e módulos adicionais.
+- `services/`, `about/`, `backend-blog/`: páginas/módulos ainda não implementados na cópia recebida.
 
-## Pendências identificadas no pacote recebido
-- Substituir `YOUR_FORM_ID` pela integração válida de formulário.
-- Verificar referências a favicons ausentes.
-- Concluir páginas ainda vazias e o backend do blog.
-- Confirmar configuração da hospedagem antes de qualquer publicação.
+## Desenvolvimento local
+Abra `index.html` no navegador ou use um servidor estático local (`python -m http.server 8000`).
 
-**Importante:** não adicionar senhas, tokens ou credenciais ao repositório.
+## Pendências encontradas
+- Configurar a integração real do formulário: ainda existe `YOUR_FORM_ID` no HTML.
+- Verificar as referências a favicons ausentes do ZIP.
+- Implementar ou remover links para páginas de conteúdo vazio conforme a estratégia de publicação.
+- O arquivo `blog.php` e os scripts PHP em `backend-blog/` estão vazios: não há backend funcional incluído.
+- Confirmar hosting/deploy antes de integrar o repositório ao website em produção.
 
-O upload do restante do código-fonte ainda está pendente.
+**Importante:** adicionar senhas, tokens ou credenciais somente em armazenamento seguro de segredos, nunca no repositório.

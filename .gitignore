@@ -1,0 +1,14 @@
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+.DS_Store
+Thumbs.db
+node_modules/
+.vscode/
+.idea/
+__pycache__/
