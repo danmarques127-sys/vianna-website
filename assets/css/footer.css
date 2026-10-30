@@ -1198,3 +1198,11 @@
 
 /* Keep navy brand lettering legible on the dark footer. */
 .footer-brand-mark{background-color:#fff!important;border-radius:5px!important;background-size:calc(100% - 12px) auto!important}
+
+
+/* Official white Viana logo: prominent without card or background */
+.footer-brand{display:inline-flex!important;align-items:center!important;max-width:100%!important}
+.footer-brand-mark{display:block!important;width:230px!important;height:195px!important;min-width:230px!important;background:transparent url('/assets/images/viana-logo-white.png') center/contain no-repeat!important;background-color:transparent!important;background-size:contain!important;border:0!important;border-radius:0!important;box-shadow:none!important;overflow:visible!important}
+.footer-brand-mark>*{display:none!important}
+.footer-brand-copy{display:none!important}
+@media(max-width:640px){.footer-brand-mark{width:190px!important;min-width:190px!important;height:160px!important}}
