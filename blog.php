@@ -23,8 +23,29 @@ $all = posts(false);
 <link rel="stylesheet" href="/assets/css/viana-brand.css">
 <link rel="stylesheet" href="/assets/css/viana-logo-final.css?v=4">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=2">
+<style>
+/* Blog-only correction: legacy blog CSS must not affect the shared header. */
+.blog-page .site-header {
+  display: block;
+  padding: 0;
+  justify-content: initial;
+  align-items: initial;
+  background: #122b40;
+}
+.blog-page .site-header a { margin-right: 0; }
+.blog-page .site-header .header-container {
+  width: min(calc(100% - (var(--container-padding) * 2)), var(--container-width));
+  margin-left: auto;
+  margin-right: auto;
+}
+.blog-header-divider {
+  display: block;
+  height: 3px;
+  background: linear-gradient(90deg, #c8102e 0%, #c8102e 19%, #e4e9ee 19%, #e4e9ee 100%);
+}
+</style>
 </head>
-<body>
+<body class="blog-page">
 <header class="site-header" id="site-header">
 <div class="header-container">
 <!-- =================================================
@@ -132,6 +153,7 @@ $all = posts(false);
 </div>
 </div>
 </header>
+<div class="blog-header-divider" aria-hidden="true"></div>
 <main class="vn-main" id="main-content">
 <section class="vn-hero">
 <nav class="vn-breadcrumb" aria-label="Breadcrumb"><a href="/index.html">Home</a> / Blog</nav>
