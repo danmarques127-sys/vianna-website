@@ -21,3 +21,8 @@ Abra `index.html` no navegador ou use um servidor estático local (`python -m ht
 - Confirmar hosting/deploy antes de integrar o repositório ao website em produção.
 
 **Importante:** adicionar senhas, tokens ou credenciais somente em armazenamento seguro de segredos, nunca no repositório.
+
+## Vercel deployment
+Site publico estatico servido a partir da raiz do repositorio na branch `main` (Framework Preset: Other, sem Build Command). A area administrativa PHP exige hospedagem PHP independente e nao executa na Vercel estatica.
+
+<!-- Deploy sync check: 2026-10-30. Documentacao atualizada para disparar verificacao da integracao Git. -->
