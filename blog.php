@@ -16,7 +16,6 @@ $all = posts(false);
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/blog-php.css">
 <link rel="stylesheet" href="/assets/css/header.css">
 <link rel="stylesheet" href="/assets/css/pages.css">
 <link rel="stylesheet" href="/assets/css/footer.css">
@@ -24,25 +23,15 @@ $all = posts(false);
 <link rel="stylesheet" href="/assets/css/viana-logo-final.css?v=4">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=2">
 <style>
-/* Blog-only correction: legacy blog CSS must not affect the shared header. */
-.blog-page .site-header {
-  display: block;
-  padding: 0;
-  justify-content: initial;
-  align-items: initial;
-  background: #122b40;
-}
-.blog-page .site-header a { margin-right: 0; }
-.blog-page .site-header .header-container {
-  width: min(calc(100% - (var(--container-padding) * 2)), var(--container-width));
-  margin-left: auto;
-  margin-right: auto;
-}
-.blog-header-divider {
-  display: block;
-  height: 3px;
-  background: linear-gradient(90deg, #c8102e 0%, #c8102e 19%, #e4e9ee 19%, #e4e9ee 100%);
-}
+/* Blog article presentation only; shared header remains governed by header.css. */
+.blog-page .blog-header-divider {display:block;width:100%;height:4px;background:#c8102e;}
+.blog-page .wrap {max-width:1100px;margin:0 auto;padding:60px 24px;}
+.blog-page .cards {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:30px;}
+.blog-page .cards article {padding:26px;background:#fff;border:1px solid #dce3e9;}
+.blog-page .cards img {width:100%;height:200px;object-fit:cover;}
+.blog-page .cards a {color:#10263b;text-decoration:none;}
+.blog-page .cards h2 {font-size:22px;line-height:1.3;}
+@media(max-width:760px){.blog-page .cards{grid-template-columns:1fr;}}
 </style>
 </head>
 <body class="blog-page">
