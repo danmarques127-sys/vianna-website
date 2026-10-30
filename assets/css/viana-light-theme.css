@@ -17,3 +17,35 @@
 .industries-grid .industry-card{background-color:rgba(255,255,255,.055)}
 @media(max-width:1000px){.viana-hero-badges{gap:12px;margin-bottom:24px}.viana-hero-badges img{height:52px;max-width:95px}.viana-hero-badges img:nth-child(1),.viana-hero-badges img:nth-child(5){max-width:118px}}
 @media(max-width:640px){.viana-hero-badges{gap:9px;justify-content:flex-start;margin-bottom:18px}.viana-hero-badges img{height:39px;max-width:68px}.viana-hero-badges img:nth-child(1),.viana-hero-badges img:nth-child(5){max-width:91px}.viana-hero-badges img:nth-child(4),.viana-hero-badges img:nth-child(6){max-width:55px}}
+
+
+/* Hero credential badges: desktop right-side vertical rail, outside text flow */
+@media(min-width:1021px){
+.hero .hero-container{position:relative}
+.hero .hero-content{position:static}
+.hero .viana-hero-badges{
+ position:absolute!important;top:50%!important;right:clamp(15px,3vw,55px)!important;
+ left:auto!important;transform:translateY(-50%)!important;
+ display:flex!important;flex-direction:column!important;flex-wrap:nowrap!important;
+ align-items:center!important;justify-content:center!important;
+ width:150px!important;max-width:150px!important;gap:8px!important;
+ margin:0!important;padding:10px 5px!important;z-index:8!important;
+ pointer-events:none;
+}
+.hero .viana-hero-badges img,
+.hero .viana-hero-badges img:nth-child(1),
+.hero .viana-hero-badges img:nth-child(4),
+.hero .viana-hero-badges img:nth-child(5){
+ display:block!important;width:100%!important;max-width:132px!important;
+ height:65px!important;max-height:65px!important;object-fit:contain!important;
+ flex:0 0 65px!important;
+}
+.hero .hero-content>:not(.viana-hero-badges){max-width:min(100%,calc(100% - 155px))}
+}
+@media(min-width:1021px) and (max-height:750px){
+.hero .viana-hero-badges{gap:3px!important}
+.hero .viana-hero-badges img{height:52px!important;max-height:52px!important;flex-basis:52px!important}
+}
+@media(max-width:1020px){
+.hero .viana-hero-badges{position:relative!important;transform:none!important;display:flex!important;flex-direction:row!important;flex-wrap:wrap!important;justify-content:center!important;align-items:center!important;width:100%!important;gap:10px!important;margin:0 0 18px!important}
+}
