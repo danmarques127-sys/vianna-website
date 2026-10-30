@@ -1206,3 +1206,7 @@
 .footer-brand-mark>*{display:none!important}
 .footer-brand-copy{display:none!important}
 @media(max-width:640px){.footer-brand-mark{width:190px!important;min-width:190px!important;height:160px!important}}
+
+/* Slightly lighter navy across shared layout, without changing brand colors. */
+.site-footer{background:#0c2238!important}
+.site-header{background:linear-gradient(90deg,#0a1c2e,#152f47)!important}
