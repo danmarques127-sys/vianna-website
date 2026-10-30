@@ -16,10 +16,10 @@ $all = posts(false);
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/blog-php.css">
 <link rel="stylesheet" href="/assets/css/header.css">
 <link rel="stylesheet" href="/assets/css/pages.css">
 <link rel="stylesheet" href="/assets/css/footer.css">
-<link rel="stylesheet" href="/assets/css/blog-php.css">
 <link rel="stylesheet" href="/assets/css/viana-brand.css">
 <link rel="stylesheet" href="/assets/css/viana-logo-final.css?v=4">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png?v=2">
