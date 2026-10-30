@@ -12,9 +12,9 @@
 :root {
     --color-navy-1000: #010912;
     --color-navy-975: #020d19;
-    --color-navy-950: #03101f;
+    --color-navy-950: #071523;
     --color-navy-925: #051629;
-    --color-navy-900: #071a2f;
+    --color-navy-900: #0c2033;
     --color-navy-850: #0a213b;
     --color-navy-800: #0d2948;
     --color-navy-700: #163c63;
@@ -9737,3 +9737,11 @@ html {
     }
 }
 
+
+/* FINAL: compact credential rail inside hero container, no earlier badge overrides */
+.hero .hero-container{position:relative}
+.hero .viana-hero-credentials{position:absolute;z-index:30;top:50%;right:18px;transform:translateY(-50%);width:108px;max-width:108px;height:auto;display:flex;flex-direction:column;align-items:center;gap:8px;margin:0;padding:0;pointer-events:none}
+.hero .viana-hero-credentials .viana-credential-item{display:flex;flex:none;align-items:center;justify-content:center;width:108px;height:58px;max-height:58px;padding:0;margin:0;overflow:hidden}
+.hero .viana-hero-credentials .viana-credential-item img{display:block;position:static;flex:none;width:102px;height:54px;max-width:102px;max-height:54px;min-width:0;min-height:0;object-fit:contain;transform:none;margin:0;padding:0}
+@media(max-width:1050px){.hero .viana-hero-credentials{right:7px;width:75px;max-width:75px;gap:5px}.hero .viana-hero-credentials .viana-credential-item{width:74px;height:44px}.hero .viana-hero-credentials .viana-credential-item img{width:70px;height:42px;max-width:70px;max-height:42px}}
+@media(max-width:760px){.hero .viana-hero-credentials{position:relative;top:auto;right:auto;transform:none;flex-direction:row;flex-wrap:wrap;justify-content:center;width:100%;max-width:100%;gap:4px;margin:12px auto 14px}.hero .viana-hero-credentials .viana-credential-item{width:58px;height:40px}.hero .viana-hero-credentials .viana-credential-item img{width:56px;height:38px;max-width:56px;max-height:38px}}
