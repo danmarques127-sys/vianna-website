@@ -1,0 +1,37 @@
+/* Vianna services photography and industries rotating showcase */
+.services-overview-grid .service-overview-card{isolation:isolate;background-color:#07192c;background-position:center;background-size:cover;color:#fff;transition:transform .35s ease,box-shadow .35s ease}
+.services-overview-grid .service-overview-card::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,rgba(3,15,28,.38),rgba(3,15,28,.48) 37%,rgba(3,15,28,.92));transition:background .3s ease}
+.services-overview-grid .service-overview-card>*{position:relative;z-index:1}
+.services-overview-grid .service-overview-card .service-overview-number,.services-overview-grid .service-overview-card .service-overview-card-content h3,.services-overview-grid .service-overview-card .service-overview-card-footer{color:#fff}
+.services-overview-grid .service-overview-card .service-overview-card-content p{color:#e2e8ef}
+.services-overview-grid .service-overview-card .service-overview-icon{color:#ff4c70;background:rgba(7,20,35,.55);border-color:rgba(255,255,255,.2)}
+.services-overview-grid .service-overview-card:hover::after,.services-overview-grid .service-overview-card:focus-visible::after{background:linear-gradient(180deg,rgba(3,15,28,.2),rgba(3,15,28,.40) 37%,rgba(3,15,28,.8))}
+.services-overview-grid .service-overview-card:nth-child(1){background-image:url("../photos/projects/commercial-building-entrance.jpeg")}
+.services-overview-grid .service-overview-card:nth-child(2){background-image:url("../photos/projects/commercial-office-corridor.jpeg")}
+.services-overview-grid .service-overview-card:nth-child(3){background-image:url("../photos/projects/commercial-restroom-double-sink.jpeg")}
+.services-overview-grid .service-overview-card:nth-child(4){background-image:url("../photos/projects/interior-window-detail-cleaning.jpeg")}
+.services-overview-grid .service-overview-card:nth-child(5){background-image:url("../photos/projects/finished-kitchen-interior.jpeg")}
+.services-overview-grid .service-overview-card:nth-child(6){background-image:url("../photos/projects/commercial-epoxy-floor-finished.jpeg")}
+.services-overview-grid .service-overview-card:nth-child(7){background-image:url("../photos/index/2.jpeg")}
+.services-overview-grid .service-overview-card:nth-child(8){background-image:url("../photos/index/4.jpeg")}
+.services-overview-grid .service-overview-card-featured{background-color:#07192c}
+@media(min-width:900px){
+.industries-grid.vianna-wheel{display:block!important;position:relative;min-height:390px;margin:15px auto 0;max-width:1120px;border:0!important;overflow:visible!important;perspective:1300px}
+.industries-grid.vianna-wheel>.industry-card{position:absolute!important;left:50%;top:50%;box-sizing:border-box;width:min(35%,375px);min-height:300px;height:300px;margin:0!important;display:grid!important;transform-origin:center;transition:transform .65s cubic-bezier(.2,.8,.2,1),opacity .5s,filter .5s;box-shadow:0 22px 60px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.16);background:linear-gradient(160deg,#102940,#061321);cursor:pointer;pointer-events:auto}
+.industries-grid.vianna-wheel>.industry-card[data-wheel-offset="0"]{z-index:5;opacity:1;transform:translate(-50%,-50%) scale(1.12);filter:none}
+.industries-grid.vianna-wheel>.industry-card[data-wheel-offset="-1"]{z-index:4;opacity:.76;transform:translate(calc(-50% - 245px),-48%) rotateY(18deg) scale(.87)}
+.industries-grid.vianna-wheel>.industry-card[data-wheel-offset="1"]{z-index:4;opacity:.76;transform:translate(calc(-50% + 245px),-48%) rotateY(-18deg) scale(.87)}
+.industries-grid.vianna-wheel>.industry-card[data-wheel-offset="-2"]{z-index:3;opacity:.25;transform:translate(calc(-50% - 405px),-48%) rotateY(26deg) scale(.7)}
+.industries-grid.vianna-wheel>.industry-card[data-wheel-offset="2"]{z-index:3;opacity:.25;transform:translate(calc(-50% + 405px),-48%) rotateY(-26deg) scale(.7)}
+.industries-grid.vianna-wheel>.industry-card[data-wheel-offset="hidden"]{opacity:0;pointer-events:none;z-index:1;transform:translate(-50%,-50%) scale(.65)}
+.vianna-wheel-controls{display:flex;align-items:center;justify-content:center;gap:16px;padding:4px 0 35px}
+.vianna-wheel-controls button{cursor:pointer}
+.vianna-wheel-arrow{width:44px;height:44px;border:1px solid rgba(255,255,255,.24);border-radius:50%;background:rgba(255,255,255,.06);color:white;font-size:24px}
+.vianna-wheel-arrow:hover{background:#c90035}
+.vianna-wheel-dots{display:flex;gap:8px;align-items:center}
+.vianna-wheel-dot{width:9px;height:9px;padding:0;border:0;border-radius:50%;background:rgba(255,255,255,.3)}
+.vianna-wheel-dot[aria-current="true"]{background:#e20b45;transform:scale(1.25)}
+}
+@media(min-width:900px) and (max-width:1050px){.industries-grid.vianna-wheel>.industry-card[data-wheel-offset="-1"]{transform:translate(calc(-50% - 180px),-48%) rotateY(18deg) scale(.83)}.industries-grid.vianna-wheel>.industry-card[data-wheel-offset="1"]{transform:translate(calc(-50% + 180px),-48%) rotateY(-18deg) scale(.83)}.industries-grid.vianna-wheel>.industry-card[data-wheel-offset="-2"],.industries-grid.vianna-wheel>.industry-card[data-wheel-offset="2"]{opacity:0;pointer-events:none}}
+@media(max-width:899px){.vianna-wheel-controls{display:none!important}}
+@media(prefers-reduced-motion:reduce){.industries-grid.vianna-wheel>.industry-card,.services-overview-grid .service-overview-card{transition:none!important}}
