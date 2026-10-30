@@ -413,3 +413,10 @@ a:focus-visible, button:focus-visible {
 .site-header .brand-text{display:none!important}
 @media(max-width:1020px){.site-header .brand-mark{width:188px!important;min-width:188px!important;height:75px!important}}
 @media(max-width:640px){.site-header .brand-mark{width:155px!important;min-width:155px!important;height:65px!important}}
+
+
+/* Give the square full-wordmark artwork enough visual height. */
+.site-header .header-container{min-height:122px!important}
+.site-header .brand-mark{height:120px!important;width:220px!important;min-width:220px!important}
+@media(max-width:1020px){.site-header .header-container{min-height:101px!important}.site-header .brand-mark{height:98px!important;width:174px!important;min-width:174px!important}}
+@media(max-width:640px){.site-header .header-container{min-height:86px!important}.site-header .brand-mark{height:84px!important;width:145px!important;min-width:145px!important}}
