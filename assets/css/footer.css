@@ -1209,4 +1209,7 @@
 
 /* Slightly lighter navy across shared layout, without changing brand colors. */
 .site-footer{background:#0c2238!important}
-.site-header:not(.is-scrolled):not(.menu-active){background:transparent!important}.site-header.is-scrolled,.site-header.menu-active{background:rgba(18,43,62,.94)!important;backdrop-filter:blur(14px)}
+/* Inner pages always use a solid navy header; only the homepage overlays its hero. */
+.site-header{background:#142b40!important;backdrop-filter:blur(14px)}
+body.home-page .site-header:not(.is-scrolled):not(.menu-active){background:transparent!important;backdrop-filter:none}
+.site-header.is-scrolled,.site-header.menu-active{background:rgba(18,43,62,.97)!important;backdrop-filter:blur(14px)}
