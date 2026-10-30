@@ -981,3 +981,17 @@ function initializeScrollReveals() {
         }
     );
 }
+
+/* About gallery lightbox (accessible click, Escape, backdrop close) */
+document.addEventListener("DOMContentLoaded",function(){
+ const modal=document.getElementById("about-gallery-lightbox"); if(!modal)return;
+ const image=modal.querySelector("img"),caption=modal.querySelector("p"),close=modal.querySelector(".about-gallery-lightbox-close");
+ let lastFocus=null,oldOverflow="";
+ function hide(){modal.hidden=true;image.removeAttribute("src");document.body.style.overflow=oldOverflow;if(lastFocus)lastFocus.focus();}
+ document.querySelectorAll(".about-mini-gallery [data-gallery-src]").forEach(function(tile){
+   tile.addEventListener("click",function(){lastFocus=tile;oldOverflow=document.body.style.overflow;image.src=tile.dataset.gallerySrc;image.alt=tile.dataset.galleryAlt||"";caption.textContent=image.alt;modal.hidden=false;document.body.style.overflow="hidden";close.focus();});
+ });
+ close.addEventListener("click",hide);
+ modal.addEventListener("click",function(e){if(e.target===modal)hide();});
+ document.addEventListener("keydown",function(e){if(modal.hidden)return;if(e.key==="Escape"){e.preventDefault();hide();}else if(e.key==="Tab"){e.preventDefault();close.focus();}});
+});
