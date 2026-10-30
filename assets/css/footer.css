@@ -1209,4 +1209,4 @@
 
 /* Slightly lighter navy across shared layout, without changing brand colors. */
 .site-footer{background:#0c2238!important}
-.site-header{background:linear-gradient(90deg,#0a1c2e,#152f47)!important}
+.site-header:not(.is-scrolled):not(.menu-active){background:transparent!important}.site-header.is-scrolled,.site-header.menu-active{background:rgba(18,43,62,.94)!important;backdrop-filter:blur(14px)}
