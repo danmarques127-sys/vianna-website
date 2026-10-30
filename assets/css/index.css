@@ -9738,10 +9738,10 @@ html {
 }
 
 
-/* FINAL: compact credential rail inside hero container, no earlier badge overrides */
-.hero .hero-container{position:relative}
-.hero .viana-hero-credentials{position:absolute;z-index:30;top:50%;right:18px;transform:translateY(-50%);width:108px;max-width:108px;height:auto;display:flex;flex-direction:column;align-items:center;gap:8px;margin:0;padding:0;pointer-events:none}
-.hero .viana-hero-credentials .viana-credential-item{display:flex;flex:none;align-items:center;justify-content:center;width:108px;height:58px;max-height:58px;padding:0;margin:0;overflow:hidden}
-.hero .viana-hero-credentials .viana-credential-item img{display:block;position:static;flex:none;width:102px;height:54px;max-width:102px;max-height:54px;min-width:0;min-height:0;object-fit:contain;transform:none;margin:0;padding:0}
-@media(max-width:1050px){.hero .viana-hero-credentials{right:7px;width:75px;max-width:75px;gap:5px}.hero .viana-hero-credentials .viana-credential-item{width:74px;height:44px}.hero .viana-hero-credentials .viana-credential-item img{width:70px;height:42px;max-width:70px;max-height:42px}}
-@media(max-width:760px){.hero .viana-hero-credentials{position:relative;top:auto;right:auto;transform:none;flex-direction:row;flex-wrap:wrap;justify-content:center;width:100%;max-width:100%;gap:4px;margin:12px auto 14px}.hero .viana-hero-credentials .viana-credential-item{width:58px;height:40px}.hero .viana-hero-credentials .viana-credential-item img{width:56px;height:38px;max-width:56px;max-height:38px}}
+
+/* Single source of truth: miniature overlay seals on right edge of Hero */
+.hero{position:relative}
+.hero>.viana-hero-credentials{position:absolute;z-index:60;right:clamp(12px,3vw,48px);top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;width:76px;max-width:76px;margin:0;padding:0;pointer-events:none}
+.hero>.viana-hero-credentials>img{display:block;width:70px;height:40px;max-width:70px;max-height:40px;object-fit:contain;flex:none;min-width:0;min-height:0;position:static;margin:0;padding:0}
+@media(max-width:900px){.hero>.viana-hero-credentials{right:8px;width:55px;max-width:55px;gap:3px}.hero>.viana-hero-credentials>img{width:50px;max-width:50px;height:29px;max-height:29px}}
+@media(max-width:600px){.hero>.viana-hero-credentials{top:auto;bottom:100px;right:8px;transform:none;width:44px;max-width:44px;gap:2px}.hero>.viana-hero-credentials>img{width:42px;max-width:42px;height:24px;max-height:24px}}
