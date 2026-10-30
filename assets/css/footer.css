@@ -1188,3 +1188,10 @@
             none !important;
     }
 }
+
+/* Official company logo in the footer */
+.footer-brand-mark{width:175px!important;height:148px!important;background:transparent url('/assets/images/viana-logo.png') center/contain no-repeat!important;border:0!important;box-shadow:none!important;overflow:hidden!important}
+.footer-brand-mark>*{display:none!important}
+.footer-brand-copy{display:none!important}
+.footer-brand{display:inline-flex!important;align-items:center!important}
+@media(max-width:640px){.footer-brand-mark{width:140px!important;height:117px!important}}
