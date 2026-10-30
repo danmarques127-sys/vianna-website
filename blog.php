@@ -9,10 +9,10 @@ $all = posts(false);
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Commercial Cleaning Blog | Vianna Commercial Services</title>
 <meta name="description" content="Commercial cleaning insights, janitorial guidance, facility care and company news from Vianna Commercial Services in Marlborough, MA.">
-<link rel="canonical" href="https://vianaservices.com/blog.php">
+<link rel="canonical" href="https://vianacommercialservices.com/blog.php">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Commercial Cleaning Blog | Vianna Commercial Services">
-<meta property="og:url" content="https://vianaservices.com/blog.php">
+<meta property="og:url" content="https://vianacommercialservices.com/blog.php">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
