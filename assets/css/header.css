@@ -404,3 +404,12 @@ a:focus-visible, button:focus-visible {
 
 /* Contrast for navy lettering inside the transparent full-color logo. */
 .site-header .brand-mark{background-color:#fff!important;border-radius:5px!important;background-size:calc(100% - 9px) auto!important}
+
+
+/* Official white Viana logo: large, clean, transparent, no duplicated wordmark */
+.site-header .brand{display:inline-flex!important;align-items:center!important;width:max-content!important;max-width:100%!important}
+.site-header .brand-mark{display:block!important;width:225px!important;height:86px!important;min-width:225px!important;background:transparent url('/assets/images/viana-logo-white.png') center/contain no-repeat!important;background-color:transparent!important;background-size:contain!important;border:0!important;border-radius:0!important;box-shadow:none!important;outline:0!important;overflow:visible!important}
+.site-header .brand-mark>*{display:none!important}
+.site-header .brand-text{display:none!important}
+@media(max-width:1020px){.site-header .brand-mark{width:188px!important;min-width:188px!important;height:75px!important}}
+@media(max-width:640px){.site-header .brand-mark{width:155px!important;min-width:155px!important;height:65px!important}}
