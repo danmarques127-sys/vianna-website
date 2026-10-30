@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule ^blog\.html$ /blog.php [R=301,L,NC]
