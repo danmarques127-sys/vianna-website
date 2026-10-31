@@ -9765,3 +9765,49 @@ html {
  .hero>.viana-hero-credentials{right:9px;top:auto;bottom:90px;transform:none;width:78px;gap:3px}
  .hero>.viana-hero-credentials>img{width:72px;height:40px;max-width:72px;max-height:40px;transform:none}
 }
+
+
+/* Mobile carousel alignment and hero credential placement - desktop unchanged */
+@media (max-width:640px) {
+  .why-pillars[data-mobile-carousel="horizontal"],
+  .services-overview-grid[data-mobile-carousel="horizontal"],
+  .industries-grid[data-mobile-carousel="horizontal"] {
+    box-sizing:border-box !important;
+    width:100% !important;
+    max-width:100% !important;
+    gap:14px !important;
+    padding:4px 7% 16px !important;
+    scroll-padding-inline:7% !important;
+    overscroll-behavior-x:contain;
+  }
+  .why-pillars[data-mobile-carousel="horizontal"] > .why-pillar,
+  .services-overview-grid[data-mobile-carousel="horizontal"] > .service-overview-card,
+  .industries-grid[data-mobile-carousel="horizontal"] > .industry-card {
+    flex:0 0 86% !important;
+    width:86% !important;
+    max-width:none !important;
+    min-width:0 !important;
+    scroll-snap-align:center !important;
+  }
+  .hero > .viana-hero-credentials {
+    top:12px !important;
+    right:14px !important;
+    bottom:auto !important;
+    left:auto !important;
+    transform:none !important;
+    width:min(56%,220px) !important;
+    display:flex !important;
+    flex-wrap:wrap;
+    justify-content:flex-end;
+    align-items:center;
+    gap:3px 6px !important;
+  }
+  .hero > .viana-hero-credentials > img {
+    width:calc(33.333% - 5px) !important;
+    height:35px !important;
+    max-width:65px !important;
+    max-height:35px !important;
+    object-fit:contain !important;
+    transform:none !important;
+  }
+}
