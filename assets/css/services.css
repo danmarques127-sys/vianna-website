@@ -610,3 +610,23 @@ main { overflow: hidden; }
     .service-track-panel.is-active { animation: none; }
     .principles-grid { scroll-behavior: auto; }
 }
+
+
+/* Mobile-only: keep the active service principle card centered. */
+@media (max-width:640px) {
+  .principles-grid {
+    box-sizing:border-box;
+    width:100%;
+    gap:14px;
+    padding:3px 7% 15px;
+    scroll-padding-inline:7%;
+    overscroll-behavior-x:contain;
+  }
+  .principles-grid > .principle-card {
+    flex:0 0 86%;
+    width:86%;
+    min-width:0;
+    max-width:none;
+    scroll-snap-align:center;
+  }
+}
