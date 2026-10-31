@@ -6,6 +6,18 @@ Source code for the official website of **Viana Commercial Services Inc.**, a fa
 **Repository:** https://github.com/danmarques127-sys/vianna-website  
 **Default branch:** `main`
 
+<p align="center">
+  <img src="https://img.shields.io/badge/HTML5-Frontend-E34F26?logo=html5&logoColor=white" alt="HTML5"/>
+  <img src="https://img.shields.io/badge/CSS3-Responsive-1572B6?logo=css&logoColor=white" alt="CSS3"/>
+  <img src="https://img.shields.io/badge/JavaScript-Vanilla-F7DF1E?logo=javascript&logoColor=black" alt="JavaScript"/>
+  <img src="https://img.shields.io/badge/PHP-Blog%20CMS-777BB4?logo=php&logoColor=white" alt="PHP"/>
+  <img src="https://img.shields.io/badge/SEO-Structured%20Metadata-228B22" alt="SEO"/>
+  <img src="https://img.shields.io/badge/Hosting-Apache%20%2F%20cPanel-D22128?logo=apache&logoColor=white" alt="Apache and cPanel"/>
+  <img src="https://img.shields.io/badge/Forms-Formspree-E5122E" alt="Formspree"/>
+  <img src="https://img.shields.io/badge/Design-Responsive-147D64" alt="Responsive design"/>
+  <img src="https://img.shields.io/badge/Location-Marlborough%2C%20MA-1F4B7A" alt="Massachusetts"/>
+</p>
+
 ## Overview
 
 The website provides service descriptions, company information, project media, quote-request options and a PHP-powered editorial blog. Its public pages use HTML, CSS and vanilla JavaScript; the article publishing system requires a PHP-capable server and writable persistent storage.
