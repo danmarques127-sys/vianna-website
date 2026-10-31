@@ -9811,3 +9811,33 @@ html {
     transform:none !important;
   }
 }
+
+
+/* Mobile hero credentials: one centered row at the marked position,
+   below the logo and above the hero eyebrow. */
+@media (max-width:640px) {
+  .hero > .viana-hero-credentials {
+    top: 120px !important;
+    left: 5% !important;
+    right: 5% !important;
+    bottom: auto !important;
+    transform: none !important;
+    width: 90% !important;
+    max-width: none !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 5px !important;
+    pointer-events: none;
+  }
+  .hero > .viana-hero-credentials > img {
+    flex: 0 1 19% !important;
+    width: 19% !important;
+    height: 42px !important;
+    max-width: 70px !important;
+    max-height: 42px !important;
+    object-fit: contain !important;
+    transform: none !important;
+  }
+}
