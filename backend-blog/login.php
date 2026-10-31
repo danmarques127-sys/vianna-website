@@ -1,7 +1,15 @@
 <?php
 declare(strict_types=1);
 
+if (!is_file(__DIR__ . '/bootstrap.php')) {
+    http_response_code(503);
+    exit('Missing bootstrap.php. Upload the entire backend-blog folder.');
+}
 require_once __DIR__ . '/bootstrap.php';
+$privateConfig = dirname(__DIR__, 2) . '/blog-config.php';
+if (is_file($privateConfig)) {
+    require_once $privateConfig;
+}
 session_safe();
 
 header('Cache-Control: no-store, private');
