@@ -50,13 +50,23 @@ function articleHtml(string $input): string {
 }
 
 $post = null;
-foreach (posts(false) as $candidate) {
-    if (hash_equals((string)($candidate['slug'] ?? ''), (string)($_GET['slug'] ?? ''))) {
-        $post = $candidate;
-        break;
+$published = posts(false);
+$slug = (string) ($_GET['slug'] ?? '');
+if ($slug === '' && !empty($published)) {
+    // A direct /post.php visit opens the latest published article.
+    $post = $published[0];
+} else {
+    foreach ($published as $candidate) {
+        if (hash_equals((string) ($candidate['slug'] ?? ''), $slug)) {
+            $post = $candidate;
+            break;
+        }
     }
 }
-if (!$post) { http_response_code(404); exit('Article not found'); }
+if (!$post) {
+    http_response_code(404);
+    exit('Article not found. <a href="/blog.php">Back to blog</a>');
+}
 $body = (string)($post['body'] ?? '');
 $body = preg_replace('/^#\\s+' . preg_quote(trim((string)$post['title']), '/') . '\\s*\\R?/ui', '', $body) ?? $body;
 ?>
