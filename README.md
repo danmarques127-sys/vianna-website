@@ -54,3 +54,17 @@ Header/menu and footer provide navigation between Home, Services, About, Project
 8. Verify legal pages, 404 status, accessibility and page speed.
 
 **Security:** keep credentials, SMTP credentials, PHP admin secrets and API tokens out of Git; configure them in secure host environment settings.
+
+## GoDaddy installation — blog administrator
+
+Upload the **entire repository** to `public_html`, including `backend-blog/bootstrap.php` and `backend-blog/setup-admin.php`. Use PHP 8.2+ in cPanel. The administrator credentials are not committed to Git.
+
+On cPanel Terminal from `public_html`, run:
+
+```bash
+php backend-blog/setup-admin.php
+```
+
+The setup asks for an administrator username (default `vianacommercialservices`) and a new password. It generates `blog-config.php` **outside** `public_html` with a password hash; the existing login automatically reads that private file. This setup script cannot be accessed by a browser. Then log in at `https://vianacommercialservices.com/backend-blog/login.php`. Ensure `backend-blog/storage` and `backend-blog/uploads` are writable by PHP, and their access-denying `.htaccess` files remain in place.
+
+If the server returns HTTP 500, inspect the cPanel PHP error log. A private GitHub repo does not protect a password copied into a public website deployment; do not commit passwords or their verifier hashes to the repository.
