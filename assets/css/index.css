@@ -9841,3 +9841,33 @@ html {
     transform: none !important;
   }
 }
+
+
+/* Mobile hero: reserve a clear row for credentials between logo and eyebrow. */
+@media (max-width:640px) {
+  .hero > .viana-hero-credentials {
+    top: 144px !important;
+    left: 5% !important;
+    right: 5% !important;
+    bottom: auto !important;
+    width: 90% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+    gap: 5px !important;
+    transform: none !important;
+  }
+  .hero > .viana-hero-credentials > img {
+    flex: 0 1 19% !important;
+    width: 19% !important;
+    height: 38px !important;
+    max-width: 70px !important;
+    max-height: 38px !important;
+    object-fit: contain !important;
+    transform: none !important;
+  }
+  .hero .hero-content {
+    padding-top: 72px !important;
+  }
+}
