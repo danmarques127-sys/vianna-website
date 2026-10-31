@@ -1,94 +1,84 @@
-# Viana Commercial Services Inc. — Website
+<div align="center">
 
-Source code for the official website of **Viana Commercial Services Inc.**, a family-operated cleaning company based in Marlborough, Massachusetts. The site focuses on commercial cleaning solutions for offices, facilities, post-construction projects and specialized environments.
+# Viana Commercial Services Inc.
 
-**Production website:** https://vianacommercialservices.com/  
-**Repository:** https://github.com/danmarques127-sys/vianna-website  
-**Default branch:** `main`
+**Official website · Commercial Cleaning · Massachusetts**
+
+Commercial cleaning, facility care and specialized cleaning services in Marlborough, Massachusetts.
+
+[**Visit Website**](https://vianacommercialservices.com/) · [**GitHub Repository**](https://github.com/danmarques127-sys/vianna-website)
+
+</div>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/HTML5-Frontend-E34F26?logo=html5&logoColor=white" alt="HTML5"/>
-  <img src="https://img.shields.io/badge/CSS3-Responsive-1572B6?logo=css&logoColor=white" alt="CSS3"/>
-  <img src="https://img.shields.io/badge/JavaScript-Vanilla-F7DF1E?logo=javascript&logoColor=black" alt="JavaScript"/>
-  <img src="https://img.shields.io/badge/PHP-Blog%20CMS-777BB4?logo=php&logoColor=white" alt="PHP"/>
-  <img src="https://img.shields.io/badge/SEO-Structured%20Metadata-228B22" alt="SEO"/>
-  <img src="https://img.shields.io/badge/Hosting-Apache%20%2F%20cPanel-D22128?logo=apache&logoColor=white" alt="Apache and cPanel"/>
-  <img src="https://img.shields.io/badge/Forms-Formspree-E5122E" alt="Formspree"/>
-  <img src="https://img.shields.io/badge/Design-Responsive-147D64" alt="Responsive design"/>
-  <img src="https://img.shields.io/badge/Location-Marlborough%2C%20MA-1F4B7A" alt="Massachusetts"/>
+  <img alt="HTML5" src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white">
+  <img alt="CSS3" src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css&logoColor=white">
+  <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black">
+  <img alt="PHP" src="https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white">
+  <img alt="Responsive design" src="https://img.shields.io/badge/Responsive-Design-087E8B?style=flat-square">
+  <img alt="SEO" src="https://img.shields.io/badge/SEO-Optimized-238636?style=flat-square">
+  <img alt="Apache and cPanel" src="https://img.shields.io/badge/Apache%20%2F%20cPanel-Hosting-D22128?style=flat-square&logo=apache&logoColor=white">
 </p>
+
+<p align="center">
+  <img alt="Blog storage" src="https://img.shields.io/badge/Blog-JSON%20Storage-4B5563?style=flat-square">
+  <img alt="Forms" src="https://img.shields.io/badge/Forms-Formspree-E5122E?style=flat-square">
+</p>
+
+---
 
 ## Overview
 
-The website provides service descriptions, company information, project media, quote-request options and a PHP-powered editorial blog. Its public pages use HTML, CSS and vanilla JavaScript; the article publishing system requires a PHP-capable server and writable persistent storage.
+The website includes a commercial cleaning portfolio, company information, project photos, service-specific pages, quote-request forms and a PHP-powered editorial blog.
 
-## Website sections
+## Technology Stack
 
-- `index.html` — homepage, service highlights and main quote-request actions.
-- `about.html` and `about/` — company background, family story, certifications and service areas.
-- `services.html` and `services/` — cleaning service pages, including janitorial, office, medical clinic, hotel, floor care and post-construction cleaning.
-- `projects.html` — project and service portfolio.
-- `contact.html` and `request-quote.html` — contact and quote-request forms.
-- `blog.php` — public blog index.
-- `backend-blog/post.php` — individual article pages.
-- `backend-blog/login.php` and `backend-blog/dashboard.php` — blog administrator authentication and editor.
-- `assets/css/`, `assets/js/`, `assets/images/`, `assets/photos/` — styles, interactions, branding and media.
-- `privacy-policy.html`, `terms.html`, `404.html` — legal and error pages.
-- `robots.txt`, `sitemap.xml`, `site.webmanifest` — search and browser metadata.
+| Layer | Technologies |
+| --- | --- |
+| Frontend | HTML5, CSS3, vanilla JavaScript |
+| Content | PHP-powered articles and content management |
+| Hosting | Apache / cPanel-compatible PHP hosting |
+| SEO | Semantic metadata, sitemap, responsive pages |
+| Source control | Git and GitHub |
 
-## Technology
+## Project Structure
 
-- HTML5 and CSS3 for responsive, semantic content and styling.
-- Vanilla JavaScript for lightweight client-side interactions.
-- PHP for the blog, administrator login, article publishing and uploads.
-- JSON-backed article storage on the PHP server.
-- Apache/cPanel-compatible hosting for PHP functionality.
+- `index.html` — homepage and primary calls to action.
+- `about.html`, `about/` — company story, safety, certifications and service areas.
+- `services.html`, `services/` — commercial cleaning service pages.
+- `projects.html`, `assets/photos/` — service and project media.
+- `contact.html`, `request-quote.html` — forms and inquiries.
+- `blog.php`, `backend-blog/` — public blog and protected article administration.
+- `assets/css/`, `assets/js/`, `assets/images/` — frontend styles, scripts and branding.
+- `robots.txt`, `sitemap.xml`, `site.webmanifest` — SEO and browser metadata.
 
-There is no frontend framework or frontend build step required for the static pages.
+## Tips & Insights / Blog
+
+The blog uses PHP and server-side JSON storage, not MySQL. Publishing requires a PHP-capable server with persistent writable storage. Public posts and uploads are stored on the hosting server rather than automatically committed to GitHub. See [backend-blog/SETUP.md](backend-blog/SETUP.md) for setup guidance. Forms reference Formspree; confirm delivery on the live domain.
 
 ## Deployment
 
-### Static website
+Deploy the static HTML, CSS, JavaScript and assets to a suitable web host. For the blog and admin features, use PHP 8.2+ with sessions, JSON and fileinfo, and configure writable but protected `backend-blog/storage/` and `backend-blog/uploads/`. Static-only hosting cannot execute PHP. Verify HTTPS, redirects, public routes, forms and blog publishing after deployment.
 
-The HTML, CSS, JavaScript and media can be served by a static host. **Static-only hosting does not execute PHP**: `blog.php`, the article pages and the administrator interface require a compatible PHP runtime. A redirect to a PHP path does not make that path executable.
+### Release Checklist
 
-### Production — PHP-enabled hosting
+1. Back up the existing production site and persistent data.
+2. Verify assets, internal links, navigation and mobile layout.
+3. Test contact and quote forms with non-sensitive submissions.
+4. Verify HTTPS, canonical URLs, metadata, robots.txt and sitemap.xml.
+5. Test public articles and authenticated publishing on PHP-enabled hosting.
+6. Check error logs, access controls and backup restoration procedures.
 
-1. Back up the current website, published articles and uploaded media before deploying.
-2. Deploy the files to the intended web root, retaining directory structure.
-3. Configure PHP 8.2+ and required extensions, including `fileinfo`, sessions and JSON.
-4. Ensure `backend-blog/storage/` and `backend-blog/uploads/` are writable by the PHP process, but appropriately protected from direct access or script execution.
-5. Keep administrator configuration and password hashes outside the public web root and outside Git.
-6. Configure HTTPS and confirm host-level permissions and redirects.
-7. Test public pages, navigation, mobile layouts, contact forms, the blog, article display and media uploads.
-8. Verify the canonical domain, `robots.txt`, `sitemap.xml` and structured metadata.
-9. Review the production error logs and validate that unpublished articles and administration endpoints are not publicly accessible.
+## Security
 
-Additional backend notes are in [backend-blog/SETUP.md](backend-blog/SETUP.md). Confirm the actual server configuration before following any older setup instruction.
+Keep admin configuration and password hashes outside the web root and Git. Confirm that one-time setup endpoints are disabled or inaccessible after provisioning, that upload directories cannot execute scripts, and that sessions and CSRF controls work on the production host. Rotate exposed credentials and inspect Git history when evaluating past leaks.
 
-## Forms and content publishing
+**Never commit passwords, secrets, private keys, live configuration files, database dumps or administrator credentials.**
 
-Contact and quote forms currently reference a Formspree endpoint. Check account ownership, intended delivery recipients, form validation and confirmation behavior before production changes.
+## SEO & Maintenance
 
-The blog includes a PHP-based editor and published-article views. Published articles and uploads are stored on the server, **not automatically committed to GitHub**. Back up server-side content before making deployment or hosting changes.
+Maintain the canonical domain, page metadata, structured data, sitemap, accessible navigation and performance. Preserve asset paths unless dependent references are updated.
 
-## Security and configuration
+## Maintainer & Ownership
 
-- Never commit administrator passwords, password hashes, API tokens, private keys, SMTP credentials, `.env` files or live configuration files.
-- Keep sensitive configuration outside the document root when supported by hosting.
-- Review and disable one-time installer endpoints after completing administrator setup.
-- Verify session protections, CSRF validation, upload file restrictions and direct-access rules in the deployed environment.
-- Rotate credentials if they have been disclosed outside an approved secret manager.
-- Scan Git history as well as the current working tree when assessing credential exposure. `.gitignore` alone does not erase committed secrets.
-
-The source includes a one-time blog administrator setup route. **Do not expose that route on a fresh deployment until administrative provisioning and access controls are ready.**
-
-## SEO and maintenance
-
-Use **Viana Commercial Services Inc.** consistently as the public-facing company name. Preserve existing `viana-*` asset references unless all dependent pages have been updated. Maintain consistent canonical URLs, Open Graph tags, structured data, sitemap paths, mobile navigation, accessibility and image optimization.
-
-The official production domain is **https://vianacommercialservices.com/**. Test the live hosting behavior separately from source-code review.
-
-## Ownership
-
-This repository is maintained under [danmarques127-sys](https://github.com/danmarques127-sys). Public repository availability does not itself grant rights to reuse the company's branding, photographs or business content. Check applicable ownership and license terms before redistribution.
+Maintained at [danmarques127-sys](https://github.com/danmarques127-sys). Branding and media remain subject to their owners' rights; public visibility does not grant unrestricted reuse.
