@@ -2,7 +2,18 @@
 declare(strict_types=1);
 const DATA_FILE=__DIR__.'/storage/posts.json';
 function h($s){return htmlspecialchars((string)$s,ENT_QUOTES|ENT_SUBSTITUTE,'UTF-8');}
-function session_safe(){if(session_status()===PHP_SESSION_NONE){session_set_cookie_params(['httponly'=>true,'secure'=>!empty($_SERVER['HTTPS'])&&$_SERVER['HTTPS']!=='off','samesite'=>'Lax']);session_start();}}
+function session_safe(){
+    if(session_status() !== PHP_SESSION_NONE) return;
+    $https = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ||
+        (($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '') === 'https');
+    session_set_cookie_params([
+        'httponly' => true,
+        'secure' => $https,
+        'samesite' => 'Lax',
+        'path' => '/'
+    ]);
+    if(!session_start()) throw new RuntimeException('Unable to start session');
+}
 function authorized(){session_safe();return !empty($_SESSION['blog_admin']);}
 function csrf(){session_safe();return $_SESSION['csrf']??=bin2hex(random_bytes(24));}
 function verify_csrf(){if(!hash_equals(csrf(),(string)($_POST['csrf']??''))){http_response_code(403);exit('Invalid request');}}
