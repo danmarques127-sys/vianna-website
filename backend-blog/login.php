@@ -1,4 +1,63 @@
 <?php
-require __DIR__.'/bootstrap.php';session_safe();$error='';
-if($_SERVER['REQUEST_METHOD']==='POST'){verify_csrf();$u=getenv('BLOG_ADMIN_USERNAME')?:'';$hash=getenv('BLOG_ADMIN_PASSWORD_HASH')?:'';if($u&&$hash&&hash_equals($u,(string)($_POST['username']??''))&&password_verify((string)($_POST['password']??''),$hash)){session_regenerate_id(true);$_SESSION['blog_admin']=true;header('Location: /backend-blog/dashboard.php');exit;}$error='Invalid credentials or administrator not configured.';}
-?><!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Viana Blog Login</title><link rel="stylesheet" href="/assets/css/blog-php.css"><main class="panel"><img src="/assets/images/viana-logo-white.png" alt="Viana" width="170"><h1>Blog administrator</h1><p><?=h($error)?></p><form method="post"><input type="hidden" name="csrf" value="<?=h(csrf())?>"><label>Username<input required name="username" autocomplete="username"></label><label>Password<input required type="password" name="password" autocomplete="current-password"></label><button>Sign in</button></form></main></html>
+declare(strict_types=1);
+
+require_once __DIR__ . '/bootstrap.php';
+session_safe();
+
+header('Cache-Control: no-store, private');
+header('X-Robots-Tag: noindex, nofollow');
+
+$error = '';
+
+if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
+    verify_csrf();
+
+    // Credentials live in the hosting environment, never in Git.
+    $adminUsername = getenv('BLOG_ADMIN_USERNAME') ?: '';
+    $adminPasswordHash = getenv('BLOG_ADMIN_PASSWORD_HASH') ?: '';
+    $submittedUsername = trim((string) ($_POST['username'] ?? ''));
+    $submittedPassword = (string) ($_POST['password'] ?? '');
+
+    if (
+        $adminUsername !== '' &&
+        $adminPasswordHash !== '' &&
+        hash_equals($adminUsername, $submittedUsername) &&
+        password_verify($submittedPassword, $adminPasswordHash)
+    ) {
+        session_regenerate_id(true);
+        $_SESSION['blog_admin'] = true;
+        header('Location: /backend-blog/dashboard.php', true, 303);
+        exit;
+    }
+
+    // Same public error whether credentials are wrong or not configured.
+    $error = 'Unable to sign in. Check your credentials.';
+}
+?>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Blog Administration | Viana Commercial Services</title>
+<link rel="stylesheet" href="/assets/css/blog-php.css">
+</head>
+<body>
+<main class="panel">
+<h1>Blog administrator</h1>
+<p>Sign in to manage Viana Commercial Services articles.</p>
+<?php if ($error !== ''): ?>
+<p role="alert"><?= h($error) ?></p>
+<?php endif; ?>
+<form method="post" action="/backend-blog/login.php">
+<input type="hidden" name="csrf" value="<?= h(csrf()) ?>">
+<label for="admin-username">Username</label>
+<input id="admin-username" required name="username" autocomplete="username" maxlength="128">
+<label for="admin-password">Password</label>
+<input id="admin-password" required type="password" name="password" autocomplete="current-password">
+<button type="submit">Sign in</button>
+</form>
+</main>
+</body>
+</html>
