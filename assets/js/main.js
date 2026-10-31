@@ -1750,7 +1750,8 @@ function initializeMobileSectionCarousels() {
                     const targetLeft =
                         track.scrollLeft +
                         itemRect.left -
-                        trackRect.left;
+                        trackRect.left -
+                        (trackRect.width - itemRect.width) / 2;
 
 
                     track.scrollTo({
